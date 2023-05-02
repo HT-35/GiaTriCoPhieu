@@ -1,0 +1,60 @@
+.header {
+    width: 100%;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    height: auto;
+    width: 100%;
+    text-transform: capitalize;
+}
+
+.Form-Stock {
+    display: inline-block;
+    width: 63%;
+    border: 1px solid black;
+    padding: 10px 40px;
+    border-radius: 8px;
+}
+
+.SumAsset,
+.SumVolumStock {
+    width: 50%;
+    float: right;
+}
+
+.SumAsset {
+    display: block;
+}
+
+.SumAsset *,
+.SumVolumStock * {
+    display: block;
+    width: 80%;
+    height: 30px;
+    margin: 20px 0;
+}
+
+.SumAsset input {
+    border-radius: 8px;
+    padding: 0 20px;
+}
+
+.btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}
+
+.submit {
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: greenyellow;
+    border-radius: 8px;
+    margin: 20px 0;
+}
