@@ -58,3 +58,22 @@
     border-radius: 8px;
     margin: 20px 0;
 }
+
+.maCK {
+    text-transform: uppercase;
+    color: red;
+    /* width: 50px; */
+}
+
+.output {
+    width: 50%;
+    float: right;
+    display: block;
+}
+
+.output * {
+    display: block;
+    width: 90%;
+    height: 30px;
+    margin: 20px 0;
+}

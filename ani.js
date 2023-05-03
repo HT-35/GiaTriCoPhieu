@@ -18,18 +18,22 @@ function priceStock(asset, stock) {
     return price;
 }
 
-function GetData(DG, TS, CP) {
+function GetData(CK, DG, TS, CP) {
 
     const giaTS = loc(TS);
     const kl = loc(CP);
 
-    const template = ` <div class="SumAsset">
-    <h3 class="DinhGia">${DG}.000      Ngàn Đồng</h3>
-    <h3 class="DinhGia">     ${giaTS} Tỷ</h3>
-    <h3 class="DinhGia">     ${kl} Cổ Phiếu</h3>
+    const template = `
+    <hr>
+     <div class="output">
+    <h3 class="DinhGia maCK"> <span class="maCK">${CK}</span> </h3>
+    <h3 class="DinhGia"> <span class="maCK"> ${DG}   VND </span>   </h3>
+    <h3 class="DinhGia"> <span class="maCK">${TS} VND </span>    </h3>
+    <h3 class="DinhGia">  <span class="maCK">${CP}     Cổ Phiếu </span></h3>
 </div>
 <div class="SumVolumStock">
-    <h3> định giá cổ phiếu theo tài sản </h3>
+    <h3>Mã CK: </h3>
+    <h3> định giá cổ phiếu </h3>
     <h3> tổng tài sản: </h3>
     <h3>Số lượng cổ phiếu</h3>
 </div>`
@@ -80,25 +84,29 @@ function loc(n) {
 console.log(loc(123456789));
 
 
-function handlePrice(Event) {
+async function handlePrice(Event) {
     Event.preventDefault();
 
+    const maCK = this.elements["maCK"].value;
     const stock = +removeDecimalPoint(this.elements["stock"].value);
     const asset = +removeDecimalPoint(this.elements["asset"].value);
 
     // seconds_Text.textContent = `0${seconds}`.slice(-2);
 
-    const price = priceStock(asset, stock).toString().slice(0, 2);
+    // const price = priceStock(asset, stock).toString().slice(0, 2);
+    const price = priceStock(asset, stock);
 
 
 
+    console.log(maCK);
 
 
-    GetData(price, asset, stock);
+
+    await GetData(maCK, price, asset, stock);
 
 
     console.log(`${(price).toString().slice(0, 2)} K`);
-
+    this.reset();
 }
 
 //   5196525259733
